@@ -13,29 +13,20 @@ import { addNavigationHelpers, StackNavigator, NavigationActions, TabNavigator }
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import mobxStore from '../mobx/store';
-import TabLeft from '../screens/TabLeft';
-import TabMiddle from '../screens/TabMiddle';
-import TabRight from '../screens/TabRight';
 
 
-const Tabs = TabNavigator({
-  'Welcome!': {
-    screen: TabLeft
-  },
-  TabMiddle: {
-    screen: TabMiddle
-  },
-  TabRight: {
-    screen: TabRight
-  },
-});
-
-class Root extends React.Component {
-  render() {
-    return (
-      <Tabs />
+@observer
+class TabRight extends React.Component {
+  render(){
+    return(
+      <View>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Text>This is the right tab</Text>
+      </View>
     );
   }
 }
 
-export default Root;
+export default TabRight

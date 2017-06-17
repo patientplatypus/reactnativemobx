@@ -94,3 +94,62 @@ AppRegistry.registerComponent('reactNativeHelloWorld', () => reactNativeHelloWor
 //     );
 //   }
 // }
+
+
+
+
+
+
+
+
+
+
+
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'This is HomeScreen',
+  };
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <Button
+        title="Go to Jane's profile"
+        onPress={() =>
+          navigate('Profile', { name: 'Jane' })
+        }
+      />
+    );
+  }
+}
+
+class ProfileScreen extends React.Component {
+  static navigationOptions = {
+    title: 'this is ProfileScreen',
+  };
+  render() {
+    const { params } = this.props.navigation.state;
+    return (
+      <Text>Hello there {params.name}</Text>
+    );
+  }
+}
+
+export const StackApp = StackNavigator({
+  Home: { screen: HomeScreen },
+  Profile: { screen: ProfileScreen },
+});
+
+const Tabs = TabNavigator({
+  'Welcome!': {
+    screen: TabLeft
+  },
+  TabMiddle: {
+    screen: TabMiddle
+  },
+  TabRight: {
+    screen: TabRight
+  },
+  StackApp: {
+    screen: StackApp
+  }
+});
