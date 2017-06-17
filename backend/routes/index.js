@@ -9,8 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-
-
 router.post('/sndtodb', function(req,res,next){
   var inputText = new InputTexts({
     text: req.body.text
@@ -18,7 +16,7 @@ router.post('/sndtodb', function(req,res,next){
 
   inputText.save(function(err,post){
     if (err) {return next(err)}
-    res.json(200, post)
+    res.send("saveOk")
   })
 })
 

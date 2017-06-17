@@ -16,6 +16,7 @@ import mobxStore from '../mobx/store';
 import TabLeft from '../screens/TabLeft';
 import TabMiddle from '../screens/TabMiddle';
 import TabRight from '../screens/TabRight';
+import HomePage from '../screens/HomePage';
 
 
 const Tabs = TabNavigator({
@@ -30,10 +31,15 @@ const Tabs = TabNavigator({
   },
 });
 
+export const StackApp = StackNavigator({
+  Home: { screen: HomePage },
+  Tabs: { screen: Tabs },
+});
+
 class Root extends React.Component {
   render() {
     return (
-      <Tabs />
+      <StackApp />
     );
   }
 }

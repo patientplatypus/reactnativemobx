@@ -24,12 +24,30 @@ class TabLeft extends React.Component {
   subtractOne(){
     mobxStore.subtractOne();
   }
+
+  componentWillMount(){
+    // fetch('http://localhost:3000/rtvfrmdb/', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     text:sendtext,
+    //   })
+    // })
+    // .then((response) => response.json())
+    // .done();
+  }
+
   render(){
     return(
       <View>
         <Text></Text>
         <Text></Text>
         <Text></Text>
+        <Text>PiggeldyProfile</Text>
+        <Text>Welcome, {mobxStore.userName}</Text>
         <Button
           title='counterbutton'
           onPress={this.addOne}
